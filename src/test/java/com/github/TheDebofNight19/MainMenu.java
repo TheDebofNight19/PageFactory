@@ -48,8 +48,6 @@ public class MainMenu {
 
     public void compareText() throws InterruptedException {
         Thread.sleep(1000);
-//        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 20);
-//        webDriverWait.until(ExpectedConditions.textToBePresentInElement(text, TEXT));
         Assert.assertEquals(text.getText(), TEXT);
         Pattern pat = Pattern.compile("[1-9]\\s[0-9]{3}\\s[0-9]{3}\\.[0-9]{2}\\s₽");
         Matcher mat = pat.matcher(amount.getText());

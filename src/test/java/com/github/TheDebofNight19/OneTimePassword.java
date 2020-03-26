@@ -10,7 +10,6 @@ public class OneTimePassword {
 
     private final WebDriver webDriver;
 
-    private final String TEXT = "код подтверждения";
     private final String OTP = "0000";
     private final String URL = "https://idemo.bspb.ru/auth/otp?authOptionId=SMS%3A10005";
 
@@ -20,11 +19,11 @@ public class OneTimePassword {
     @FindBy(id = "login-otp-button")
     private WebElement enterButton;
 
-
     public OneTimePassword(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
+
 
     public void assertOneTimePasswordPage(){
         String currentUrl = webDriver.getCurrentUrl();
