@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class OneTimePassword {
+public class OneTimePassword<O> {
 
     private final WebDriver webDriver;
 
@@ -19,6 +19,7 @@ public class OneTimePassword {
     @FindBy(id = "login-otp-button")
     private WebElement enterButton;
 
+
     public OneTimePassword(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
@@ -28,10 +29,11 @@ public class OneTimePassword {
     public void assertOneTimePasswordPage(){
         String currentUrl = webDriver.getCurrentUrl();
         Assert.assertEquals(currentUrl, URL);
+        oneTimePasswordField.clear();
+
     }
 
     public void insertOneTimePassword(){
-        oneTimePasswordField.clear();
         oneTimePasswordField.sendKeys(OTP);
         enterButton.click();
     }

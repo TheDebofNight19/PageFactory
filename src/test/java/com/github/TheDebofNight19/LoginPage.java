@@ -37,8 +37,8 @@ public class LoginPage {
 
         webDriver.get(URL);
         loginField.clear();
-        passwordField.clear();
         loginField.sendKeys(LOGIN);
+        passwordField.clear();
         passwordField.sendKeys(PASSWORD);
         enterButton.click();
     }
