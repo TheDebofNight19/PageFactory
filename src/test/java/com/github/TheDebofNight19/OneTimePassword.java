@@ -26,11 +26,11 @@ public class OneTimePassword<O> {
     }
 
 
-    public void assertOneTimePasswordPage(){
+    public OneTimePassword assertOneTimePasswordPage(){
         String currentUrl = webDriver.getCurrentUrl();
         Assert.assertEquals(currentUrl, URL);
         oneTimePasswordField.clear();
-
+        return this;
     }
 
     public void insertOneTimePassword(){
